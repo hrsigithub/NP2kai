@@ -174,7 +174,12 @@ static BRESULT fappend(LISTARRAY flist, FLINFO *fli) {
 		return(FAILURE);
 	}
 	fl->isdir = (fli->attr & 0x10)?1:0;
-	file_cpyname(fl->name, fli->path, NELEMENTS(fl->name));
+
+/* 文字化け修正 */
+	/* file_cpyname(fl->name, fli->path, NELEMENTS(fl->name)); */
+	strncpy(fl->name, fli->path, sizeof(fl->name));
+	fl->name[sizeof(fl->name)-1] = '\0'; // 念のため終端保証
+
 	st = &filesel.fbase;
 	while(1) {
 		cur = *st;

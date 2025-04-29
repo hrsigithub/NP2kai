@@ -5,6 +5,38 @@ NP2kai is PC-9801 series emulator<br>
 
 ![](https://img.shields.io/github/tag/AZO234/NP2kai.svg)
 
+####　セットアップ
+
+<details><summary>
+for macOS M1
+</summary><div>
+
+#### Install tools
+1. brew install cmake ninja sdl sdl_mixer sdl_ttf sdl2 sdl2_mixer sdl2_ttf libusb
+
+#### Build
+1. Change directory to sdl.
+```
+$ mkdir build && cd build
+```
+2. Make.
+```
+$ cmake .. -D BUILD_SDL=ON
+$ make -j
+```
+```
+3. Install.
+```
+$ sudo make install
+$ sudo install_name_tool -add_rpath /Library/Frameworks /usr/local/bin/sdlnp21kai
+/usr/local/bin/sdlnp21kaiにインストールされる．
+```
+
+
+
+--------------------
+
+
 ## Build and Install
 
 ### libretro core
