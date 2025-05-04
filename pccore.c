@@ -101,7 +101,6 @@
 
 
 const OEMCHAR np2version[] = OEMTEXT(NP2KAI_GIT_TAG " " NP2KAI_GIT_HASH);
-
 #if defined(_WIN32_WCE)
 #define	PCBASEMULTIPLE	2
 #else
@@ -271,6 +270,8 @@ const OEMCHAR	*p;
 
 static void pccore_set(const NP2CFG *pConfig)
 {
+	printf("✅ マスター音量は %d に設定されています\n", g_master_volume);
+
 	UINT8	model;
 	UINT32	multiple;
 #if defined(SUPPORT_LARGE_MEMORY)
