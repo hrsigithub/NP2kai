@@ -16,8 +16,6 @@
 #endif	/* defined(SUPPORT_WAVEREC) */
 
 	SOUNDCFG	soundcfg;
-	// UINT8 g_master_volume = 100;
-	UINT8 g_master_volume = 10;
 
 #define	STREAM_CBMAX	16
 
@@ -52,6 +50,8 @@ static void streamreset(void) {
 }
 
 static void streamprepare(UINT samples) {
+
+	UINT8 g_master_volume = 10; // 初期値 100
 
 	CBTBL	*cb;
 	UINT	count;
