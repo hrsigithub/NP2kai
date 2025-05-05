@@ -16,6 +16,8 @@
 #endif	/* defined(SUPPORT_WAVEREC) */
 
 	SOUNDCFG	soundcfg;
+	// UINT8 g_master_volume = 100;
+	UINT8 g_master_volume = 10;
 
 #define	STREAM_CBMAX	16
 
@@ -49,12 +51,7 @@ static void streamreset(void) {
 	SNDCSEC_LEAVE;
 }
 
-
-
 static void streamprepare(UINT samples) {
-	UINT8 g_master_volume = 10;  // 初期値 100
-
-	printf("✅ マスター音量は %d に設定されています\n", g_master_volume);
 
 	CBTBL	*cb;
 	UINT	count;

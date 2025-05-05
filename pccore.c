@@ -270,6 +270,7 @@ const OEMCHAR	*p;
 
 static void pccore_set(const NP2CFG *pConfig)
 {
+	printf("✅ マスター音量は %d に設定されています\n", g_master_volume);
 
 	UINT8	model;
 	UINT32	multiple;
