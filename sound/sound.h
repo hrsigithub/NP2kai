@@ -11,8 +11,6 @@
 
 #if !defined(DISABLE_SOUND)
 
-extern UINT8 g_master_volume;
-
 typedef void (SOUNDCALL * SOUNDCB)(void *hdl, SINT32 *pcm, UINT count);
 
 typedef struct {
